@@ -5,7 +5,7 @@ Present is **Fixed** and **Enhanced** by ***[taosuayou](https://github.com/taosu
 
 一个简洁的个人主页,支持显示博客文章/随机背景图片/随机语句.  
 
-![preview.gif](https://jsd.onmicrosoft.cn/gh/taosuayou/Present-FE/preview.png)
+![preview.gif](https://raw.gitmirror.com/taosuayou/Present-FE/refs/heads/main/preview.png)
 
 ## 🎉 修复和增强
 
