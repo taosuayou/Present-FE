@@ -7,6 +7,13 @@ Present is **Fixed** and **Enhanced** by ***[taosuayou](https://github.com/taosu
 
 ![preview.gif](https://raw.gitmirror.com/taosuayou/Present-FE/refs/heads/main/preview.png)
 
+
+## 4.12, 2025 
+- [x] 更改为本地音乐播放，可以删除meting注释来调用网络音乐
+- [x] 新增运行时间，可在index.html中调整
+- [x] 根据时间确定工作和休息时间
+- [x] 修复部分样式问题
+
 ## 🎉 修复和增强
 
 - [x] 修复并升级Fontawesome至6.x

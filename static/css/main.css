@@ -222,11 +222,10 @@ body.locked,
 
 .footer-container {
     left: 0;
-    z-index: 0;
     width: 100vw;
     bottom: 8px;
     color: white;
-    position: absolute;
+    position: relative;
     text-shadow: 4px 4px 5px rgba(0, 0, 0, .5);
 }
 
@@ -544,10 +543,6 @@ body.locked,
         color: #ddd;
     }
 
-    .footer-container a {
-        color: #f84b73;
-    }
-
     .background-layer {
         filter: brightness(0.75);
     }
@@ -564,7 +559,7 @@ body.locked,
         position: relative;
         margin-top: 77px;
         /* 根据导航栏高度增加底部间距 */
-        z-index: -1;
+        z-index: 0;
         /* 确保在内容层下方 */
     }
 

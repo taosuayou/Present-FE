@@ -37,22 +37,22 @@
         <div class="content-container">
             <div class="self-wrapper">
                 <div class="self-content links-container flex-center text-center">
-                    <a href="https://www.mxjoy.top" target="_blank" class="link-item">
+                    <a href="#" target="_blank" class="link-item">
                         <div class="link-icon"><i class="fa-solid fa-house fa-2xl"></i></div>
                         <div>随笔</div>
                     </a>
-                    <a href="https://space.bilibili.com/1475429007" target="_blank" class="link-item">
+                    <a href="#" target="_blank" class="link-item">
                         <div class="link-icon"><i class="fa-brands fa-bilibili fa-2xl" style="color: #74C0FC;"></i></div>
                         <div>Bilibili</div>
                     </a>
-                    <a href="https://287917593.xyz" target="_blank" class="link-item">
+                    <a href="#" target="_blank" class="link-item">
                         <div class="link-icon"><i class="fa-brands fa-tiktok fa-2xl"></i></div>
                         <div>抖音</div>
                     </a>
-                    <a href="https://github.com/taosuayou" target="_blank" class="link-item">
+                    <a href="#" target="_blank" class="link-item">
                         <div class="link-icon"><i class="fa-brands fa-github fa-2xl"></i></div>
                         <div>Github</div>
-                        <a href="mailto:nayamxjoy@qq.com" class="link-item">
+                        <a href="mailto:666@qq.com" class="link-item">
                             <div class="link-icon"><i class="fa-solid fa-envelope fa-2xl"></i></div>
                             <div>Email</div>
                         </a>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="self-content">
                     <div class="info-container">
-                        This is a simple page that has the unfogetable memories.
+                        This page is simple but has the unfogetable memories.
                     </div>
 
                 </div>
@@ -96,12 +96,82 @@
     </div>
     <!-- 在index.html中找到底部版权信息上方添加 -->
     <div class="player-container">
-        <div class="flex-center" style="position: relative; z-index: 999; margin: 5px 0">
-            <div id="aplayer-container"></div>
-            <meting-js server="netease" type="song" fixed="false" mini="false" autoplay="true" preload="auto" volume="1" list-max-height="120px" id="2133591453">
-            </meting-js>
+        <div class="flex-center">
+            <!-- <div id="aplayer-container"></div> -->
+            <!-- <meting-js server="netease" type="song" fixed="false" mini="false" autoplay="true" preload="auto" volume="1" list-max-height="120px" id="2133591453"> -->
+            <!-- 引入 APlayer 样式和脚本 -->
+            <link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/aplayer/dist/APlayer.min.css">
+            <script src="https://jsd.onmicrosoft.cn/npm/aplayer/dist/APlayer.min.js"></script>
+
+            <!-- 播放器容器 -->
+            <div id="aplayer"></div>
+            <script>
+                // 初始化 APlayer
+                const ap = new APlayer({
+                    container: document.getElementById('aplayer'),
+                    autoplay: true,            // 是否自动播放，浏览器对自动播放可能有限制
+                    theme: '#F84B73',           // 播放器主题色，可自定义
+                    loop: 'all',                // 循环模式，支持 'all'（列表循环）、'one'（单曲循环）、'none'（顺序播放）
+                    order: 'list',              // 播放顺序，可设为 'list'（列表顺序）、'random'（随机播放）
+                    preload: 'auto',            // 预加载设置
+                    volume: 1,                // 初始音量（范围 0 - 1）
+                    listFolded: true,          // 播放列表是否默认折叠
+                    audio: [
+                        {
+                            name: '可不可以',                          // 歌曲名称
+                            artist: '张紫豪',                           // 歌手名称
+                            url: 'static/audio/可不可以.mp3',             // 本地音乐文件地址（服务器返回必须为正确的 MIME 类型）
+                            cover: 'static/img/可不可以.jpg',       // 封面图片路径
+                            lrc: 'static/lyrics/可不可以.lrc'             // 歌词文件路径（可选）
+                        }
+                        // 可继续添加更多歌曲对象
+                    ]
+                });
+            </script>
+            <!-- </meting-js> -->
         </div>
-        <div class="footer-container text-center">© 2024-2025 By <a href="https://github.com/taosuayou/Present-FE" target="_blank">Present-FE</a></div>
+        <div class="footer-container text-center">
+            © 2024-2025 By <a href="https://github.com/taosuayou/Present-FE" target="_blank">Present-FE</a>
+        </div>
+        <!-- 新添加的运行时间显示容器 -->
+        <div id="workboard" style="text-align: center;"></div>
+    </div>
+
+    <!-- 在关闭 body 标签前引入 JavaScript -->
+    <script>
+        var now = new Date;
+        
+        function createtime() {
+            var t = new Date("03/21/2025 21:06:00");
+            now.setTime(now.getTime() + 250);
+            var e = (now - t) / 1e3 / 60 / 60 / 24,
+                a = Math.floor(e),
+                n = (now - t) / 1e3 / 60 / 60 - 24 * a,
+                r = Math.floor(n);
+            1 == String(r).length && (r = "0" + r);
+            var s = (now - t) / 1e3 / 60 - 1440 * a - 60 * r,
+                i = Math.floor(s);
+            1 == String(i).length && (i = "0" + i);
+            var o = (now - t) / 1e3 - 86400 * a - 3600 * r - 60 * i,
+                l = Math.round(o);
+            1 == String(l).length && (l = "0" + l);
+            let g = "";
+            g = r < 21 && r >= 7 ? 
+                `<img class='boardsign' src='static/img/maxjoy-认真工作ing.svg' title='减少期待，戒掉敏感~'>
+                 <span class='textTip' style="color: white; text-shadow: 4px 4px 5px rgba(0, 0, 0, .5)"> <br>本站已经运行了 ${a} 天</span>
+                 <span id='runtime' style="color: white; text-shadow: 4px 4px 5px rgba(0, 0, 0, .5)"> ${r} 小时 ${i} 分 ${l} 秒 </span>
+                 <i class='fa-solid fa-heart-pulse' style='color:red'></i>` 
+                : 
+                `<img class='boardsign' src='static/img/maxjoy-下班啦.svg' title='下班了就该开开心心的玩耍，嘿嘿~'>
+                 <span class='textTip' style="color: white; text-shadow: 4px 4px 5px rgba(0, 0, 0, .5)"> <br>本站已经运行了 ${a} 天</span>
+                 <span id='runtime' style="color: white; text-shadow: 4px 4px 5px rgba(0, 0, 0, .5)"> ${r} 小时 ${i} 分 ${l} 秒 </span>
+                 <i class='fa-solid fa-heart-pulse' style='color:red'></i>`;
+            document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = g)
+        }
+        setInterval((() => {
+            createtime()
+        }), 250);
+    </script>
 </body>
 
 <!-- jsdeliver镜像 -->
@@ -121,12 +191,12 @@
 <link rel="stylesheet" href="https://cdn.jsdmirror.com/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdmirror.com/npm/aplayer/dist/APlayer.min.js"></script>
 <!--require MetingJS -->
-<script src="https://cdn.jsdmirror.com/npm/meting@2/dist/Meting.min.js"></script>
+<!-- <script src="https://cdn.jsdmirror.com/npm/meting@2/dist/Meting.min.js"></script> -->
 <script src="static/js/main.js"></script>
 <script>
     (function () {
         var feedType = "xml";
-        var feedPath = "https://www.mxjoy.top/atom.xml";
+        var feedPath = "okhttp";
         var bgArr = [{
             "url": "https://bing.ltya.top/api",
             "thumb": ""
